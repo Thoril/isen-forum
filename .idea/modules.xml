@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/isen-forum.iml" filepath="$PROJECT_DIR$/.idea/isen-forum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/isen_forum.iml" filepath="$PROJECT_DIR$/.idea/isen_forum.iml" />
     </modules>
   </component>
 </project>

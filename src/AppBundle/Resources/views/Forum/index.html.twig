@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Forum:index{% endblock %}
+
+{% block body %}
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <ul class="collection">
+        {% for forum in forums %}
+        <li class="collection-item avatar">
+            <i class="material-icons circle">folder</i>
+            <span class="title">
+                <a href="{{ path('app_forum_show', {id : forum.id })}}">{{ forum.title }}</a>
+            </span>
+
+            <p>
+                <blockquote>{{ forum.description }}</blockquote>
+          </p>
+            <span class="title">
+                <a href="{{ path('app_forum_remove', {id : forum.id })}}">Remove</a>
+            </span>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ path('app_forum_add') }}">
+        <button class="btn waves-effect waves-light">
+            Create new Forum <i class="material-icons right">send</i>
+        </button>
+    </a>
+{% endblock %}

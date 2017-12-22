@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Topic:show{% endblock %}
+
+{% block body %}
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <h3>{{ topic.title }}</h3>
+    <blockquote>Created by <b>{{ topic.author }}</b></blockquote>
+    <a href="{{ path('app_post_add',{forum_id:forum.id,topic_id:topic.id}) }}">
+        <button class="btn waves-effect waves-light">
+            Create new post <i class="material-icons right">send</i>
+        </button>
+    </a>
+    <ul class="collection">
+        {%  for post in topic.post %}
+            <li class="collection-item avatar">
+
+                <span class="title">
+                {{ post.message}}
+            </span>
+                <span class="secondary-content">
+                {{ post.author }}
+            </span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
